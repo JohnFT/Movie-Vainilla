@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Movie Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=K2D:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="section">
+        <h1 class="section__title">JavaScript Movie Database</h1>
+        <div class="section__moveBanner"></div>
+        <section class="grid">
+            <header class="grid__header">
+                <h2 class="grid__title">We have X movies ordered by XXXX</h2>
+                <div class="grid__controls">
+                    <div class="grid__pager pager">
+                        <button class="button pager__prev"><i class="fas fa-angle-left"></i> Previous</button>
+                        <p class="pager__header">Page 1 of 10</p>
+                        <button class="button pager__next">Next <i class="fas fa-angle-right"></i></button>
+                    </div>
+                    <div class="grid__orderer">
+                        <label for="orderBy">Order By:</label>
+                        <select id="orderBy">
+                            <option value="title">Title</option>
+                            <option value="year" selected>Year</option>
+                            <option value="imdbRating">IMDB Rating</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            <div class="grid__content">
+                <!-- Repeat for each movie-->
+                <div class="grid__item card">
+                    <div class="card__conten_image">
+                        <img class="card__image" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SY500_CR0,0,333,500_AL_.jpg" />
+                    </div>
+                    <h3 class="card__title">The Silence of the Lambs <span>year</span></h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
