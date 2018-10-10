@@ -1,8 +1,10 @@
 let moviesHtml = [];
 let page = 1;
+let countAllMovies = 0;
 let lengthMovies = 0;
 let order = 'year';
 const banner = document.getElementsByClassName('section__moveBanner')[0];
+const gridTitle = document.getElementsByClassName('grid__title')[0];
 
 const loadDatabase = () => {
     var xhttp = new XMLHttpRequest();
@@ -10,6 +12,8 @@ const loadDatabase = () => {
         if (this.response) {
             window.movieDatabase = JSON.parse(this.response);
             lengthMovies = Math.floor(window.movieDatabase.length / 12);
+            countAllMovies = window.movieDatabase.length;
+            gridTitle.innerHTML = `We have ${countAllMovies} movies ordered by ${order}`;
             paintCards(page, order);
         }
     };
@@ -111,6 +115,7 @@ const paintCards = (page, order = 'year') => {
 
 const changeOrder = (event) => {
     order = event.target.value;
+    gridTitle.innerHTML = `We have ${countAllMovies} movies ordered by ${order}`;
     paintCards(page, order);
 }
 
